@@ -1,13 +1,10 @@
+const genres = require("./routes/genres");
+const express = require("express");
+const app = express();
 
+app.use(express.json());
+app.use('/api/genres', genres);
 
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
 
-
-
-
-
-
-
-//Practice
-//In case of Browser the global object's name is 'window'
-//In case of nodejs server the name is 'global'
-console.log(global.console)
